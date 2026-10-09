@@ -1,0 +1,39 @@
+/* Bodoni Moda (variável: peso 400–900 e tamanho óptico) e Instrument Sans (variável: peso 400–700), servidas pelo próprio site. */
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('/fonts/bodoni-moda.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('/fonts/bodoni-moda-italico.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Reservas com métricas parecidas, para o texto não pular quando a fonte chega. */
+@font-face {
+  font-family: 'Bodoni Reserva';
+  src: local('Didot'), local('Bodoni 72'), local('Georgia'), local('Times New Roman');
+  size-adjust: 104%;
+  ascent-override: 92%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Instrument Reserva';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 100%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}

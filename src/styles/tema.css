@@ -1,0 +1,38 @@
+/*
+  Cores e tokens, tirados da própria marca:
+  gesso e areia (o papel do logotipo), parede e sombra (a parede ao entardecer da arte do topo),
+  ouro (o letreiro) e marinho (a assinatura "Saúde e bem-estar").
+*/
+@theme {
+  --color-gesso: #F4EBDD;
+  --color-gesso-2: #FBF6EE;
+  --color-areia: #EADBC3;
+  --color-parede: #DDBF95;
+  --color-sombra: #B39878;
+  --color-ouro: #B88A3B;
+  --color-ouro-claro: #E3BE77;
+  --color-ouro-texto: #7A5718;
+  --color-marinho: #1F2B3E;
+  --color-noite: #18212F;
+  --color-noite-2: #111824;
+  --color-vinho: #6E2439;
+  --color-tinta: #18212F;
+  --color-tinta-2: #3F4858;
+  --color-linha: rgb(24 33 47 / 0.16);
+
+  --font-display: 'Bodoni Moda', 'Bodoni Reserva', 'Didot', Georgia, serif;
+  --font-sans: 'Instrument Sans', 'Instrument Reserva', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-luxo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-cortina: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-mola: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+:root {
+  --margem: clamp(20px, 5.2vw, 80px);
+  --largura: 1360px;
+  --topo-h: 76px;
+  --secao-y: clamp(96px, 12.5vw, 190px);
+  --arco: 999px 999px 10px 10px;
+}
+@media (max-width: 767px) { :root { --topo-h: 64px; } }
