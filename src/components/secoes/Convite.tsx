@@ -10,8 +10,8 @@ import Palmeira from '../ui/Palmeira'
 import Revelar, { Titulo } from '../ui/Revelar'
 
 /**
- * O convite final: o logotipo em ouro sobre papel, como um cartão que inclina com o mouse
- * e ganha um reflexo de luz, na mesma parede ao entardecer do topo (com a sombra de palmeira viva).
+ * O convite final: o logotipo gravado em papel, como um cartão que inclina com o mouse
+ * e ganha um reflexo de luz, na mesma parede rosada do topo (com a sombra de folhas viva).
  */
 export default function Convite() {
   const { reduced } = useMotionPreferences()
@@ -24,7 +24,7 @@ export default function Convite() {
   const rotY = useSpring(useTransform(mx, [-1, 1], [-11, 11]), { stiffness: 110, damping: 15 })
   const rotX = useSpring(useTransform(my, [-1, 1], [9, -9]), { stiffness: 110, damping: 15 })
   const bx = useTransform(mx, [-1, 1], ['12%', '88%']), by = useTransform(my, [-1, 1], ['8%', '92%'])
-  const brilho = useMotionTemplate`radial-gradient(circle at ${bx} ${by}, rgb(255 244 214 / .5), transparent 46%)`
+  const brilho = useMotionTemplate`radial-gradient(circle at ${bx} ${by}, rgb(255 240 232 / .55), transparent 46%)`
   useEffect(() => {
     const el = ref.current
     if (reduced || !el || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
@@ -44,7 +44,7 @@ export default function Convite() {
             <picture>
               <source type="image/avif" srcSet={PAPEL.avif} sizes="(min-width: 1024px) 34vw, 76vw" />
               <img src={PAPEL.src} srcSet={PAPEL.webp} sizes="(min-width: 1024px) 34vw, 76vw" width={PAPEL.largura} height={PAPEL.altura}
-                loading="lazy" decoding="async" alt={`Logotipo da ${SITE.nome} gravado em ouro sobre papel creme.`} />
+                loading="lazy" decoding="async" alt={`Logotipo do ${SITE.nome} gravado em vinho e rosé sobre papel claro.`} />
             </picture>
             <m.span className="convite-brilho" aria-hidden="true" style={reduced ? undefined : { backgroundImage: brilho }} />
           </m.div>

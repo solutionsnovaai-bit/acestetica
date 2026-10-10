@@ -7,7 +7,7 @@ const consulta = encodeURIComponent(`${SITE.nome}, ${busca}`)
 /** Abre o endereço no Google Maps (no celular, abre o app). */
 export const linkMapa = `https://www.google.com/maps/search/?api=1&query=${consulta}`
 
-/** Abre a ficha da clínica no Google Maps, onde ficam as avaliações. */
+/** Abre a ficha do salão no Google Maps, onde ficam as avaliações. */
 export const linkAvaliacoes = SITE.googlePlaceId ? `${linkMapa}&query_place_id=${SITE.googlePlaceId}` : linkMapa
 
 /** Mapa embutido (não precisa de chave). */

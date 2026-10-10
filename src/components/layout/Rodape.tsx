@@ -6,9 +6,9 @@ import { ENDERECO_COMPLETO, INSTAGRAM_URL, MENSAGENS, SITE } from '../../config/
 import { waLink } from '../../lib/whatsapp'
 import { useMotionPreferences } from '../../hooks/useMotionPreferences'
 import BrandIcon from '../ui/BrandIcon'
-import Monograma from '../ui/Monograma'
+import Logotipo from '../ui/Marca'
 
-/** Rodapé: a assinatura da marca correndo com a rolagem, o monograma e os contatos. */
+/** Rodapé: o lema do salão correndo com a rolagem, o logotipo desenhado e os contatos. */
 export default function Rodape() {
   const { reduced, paused, toggle } = useMotionPreferences()
   const ref = useRef<HTMLElement>(null)
@@ -21,8 +21,8 @@ export default function Rodape() {
     </div>
     <div className="conteiner rodape-grade">
       <div className="rodape-marca">
-        <Monograma className="rodape-mono" espessura={9} />
-        <p>{SITE.nome}<span>{SITE.assinatura}</span></p>
+        <Logotipo className="rodape-logo" />
+        <p><span className="sr-only">{SITE.nome}. </span>{SITE.assinatura} no {SITE.endereco.bairro}.</p>
       </div>
       <div className="rodape-col">
         <h2 className="rodape-titulo">Endereço</h2>

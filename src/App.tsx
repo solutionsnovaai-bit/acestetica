@@ -10,9 +10,9 @@ import Hero from './components/secoes/Hero'
 import type { Fase } from './components/secoes/Hero'
 import Faixa from './components/secoes/Faixa'
 import Manifesto from './components/secoes/Manifesto'
-import Tratamentos from './components/secoes/Tratamentos'
+import Servicos from './components/secoes/Servicos'
 import Passos from './components/secoes/Passos'
-import Amanda from './components/secoes/Amanda'
+import Galeria from './components/secoes/Galeria'
 import Avaliacoes from './components/secoes/Avaliacoes'
 import OndeFica from './components/secoes/OndeFica'
 import Convite from './components/secoes/Convite'
@@ -44,9 +44,9 @@ function Site() {
       <Hero fase={fase} />
       <Faixa />
       <Manifesto />
-      <Tratamentos />
+      <Servicos />
+      <Galeria />
       <Passos />
-      <Amanda />
       <Avaliacoes />
       <OndeFica />
       <Convite />

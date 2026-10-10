@@ -7,7 +7,7 @@ import { useSceneActivity } from '../../hooks/useSceneActivity'
 const envolve = (min: number, max: number, v: number) => { const r = max - min; return ((((v - min) % r) + r) % r) + min }
 
 /**
- * Fita com os cuidados da clínica. Anda sozinha, acelera com a velocidade da rolagem
+ * Fita com os serviços do salão. Anda sozinha, acelera com a velocidade da rolagem
  * e inverte o sentido quando a pessoa rola para cima.
  */
 export default function Faixa() {
@@ -34,7 +34,7 @@ export default function Faixa() {
   const metade = <span className="faixa-metade">
     {FAIXA.map(p => <span key={p} className="faixa-item"><span>{p}</span><i className="faixa-ponto" /></span>)}
   </span>
-  return <section ref={ref} className="faixa tema-escuro" aria-label="Cuidados da clínica">
+  return <section ref={ref} className="faixa tema-escuro" aria-label="Serviços do salão">
     <p className="sr-only">{FAIXA.join(', ')}.</p>
     <m.div className="faixa-trilho" aria-hidden="true" style={{ x }}>{metade}{metade}</m.div>
   </section>

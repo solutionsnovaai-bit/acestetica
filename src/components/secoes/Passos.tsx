@@ -9,7 +9,7 @@ import { Botao } from '../ui/Botao'
 import Revelar, { Titulo } from '../ui/Revelar'
 
 function Passo({ i, total, progresso, titulo, texto, parado }: { i: number; total: number; progresso: MotionValue<number>; titulo: string; texto: string; parado: boolean }) {
-  /* cada passo acende quando o fio de ouro chega nele */
+  /* cada passo acende quando o fio chega nele */
   const de = i / total, ate = de + .5 / total
   const opacity = useTransform(progresso, [de, ate], [.3, 1])
   const escala = useTransform(progresso, [de, ate], [.4, 1])
@@ -21,7 +21,7 @@ function Passo({ i, total, progresso, titulo, texto, parado }: { i: number; tota
   </m.li>
 }
 
-/** Como funciona, em três passos. Um fio de ouro corre pelos passos conforme a rolagem. */
+/** Como funciona, em três passos. Um fio corre pelos passos conforme a rolagem. */
 export default function Passos() {
   const { reduced } = useMotionPreferences()
   const ref = useRef<HTMLOListElement>(null)

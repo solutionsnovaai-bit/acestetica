@@ -1,24 +1,22 @@
 /*
-  Cores e tokens, tirados da própria marca:
-  gesso e areia (o papel do logotipo), parede e sombra (a parede ao entardecer da arte do topo),
-  ouro (o letreiro) e marinho (a assinatura "Saúde e bem-estar").
+  Cores e tokens, tirados do logotipo do salão:
+  vinho e bordô (o monograma e o nome), rosé (os ramos), rose gold (o arco fino)
+  e os tons claros de fundo, do branco rosado à parede do topo.
 */
 @theme {
-  --color-gesso: #F4EBDD;
-  --color-gesso-2: #FBF6EE;
-  --color-areia: #EADBC3;
-  --color-parede: #DDBF95;
-  --color-sombra: #B39878;
-  --color-ouro: #B88A3B;
-  --color-ouro-claro: #E3BE77;
-  --color-ouro-texto: #7A5718;
-  --color-marinho: #1F2B3E;
-  --color-noite: #18212F;
-  --color-noite-2: #111824;
-  --color-vinho: #6E2439;
-  --color-tinta: #18212F;
-  --color-tinta-2: #3F4858;
-  --color-linha: rgb(24 33 47 / 0.16);
+  --color-blush: #FBF4F1;
+  --color-blush-2: #FFFBF9;
+  --color-petala: #F4E3DD;
+  --color-parede: #EDD9D0;
+  --color-sombra: #CDB0A4;
+  --color-rosegold: #C4917A;
+  --color-rose: #E8BDBB;
+  --color-vinho: #7A1F2D;
+  --color-bordo: #4A121C;
+  --color-bordo-2: #360C14;
+  --color-tinta: #2B1A1D;
+  --color-tinta-2: #5F4C4F;
+  --color-linha: rgb(43 26 29 / 0.14);
 
   --font-display: 'Bodoni Moda', 'Bodoni Reserva', 'Didot', Georgia, serif;
   --font-sans: 'Instrument Sans', 'Instrument Reserva', ui-sans-serif, system-ui, sans-serif;

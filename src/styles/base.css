@@ -6,15 +6,15 @@ html {
   scroll-behavior: auto;
   scroll-padding-top: calc(var(--topo-h) + 12px);
   overflow-x: clip;
-  background: var(--color-gesso);
+  background: var(--color-blush);
   scrollbar-width: thin;
-  scrollbar-color: var(--color-ouro) var(--color-gesso);
+  scrollbar-color: var(--color-rosegold) var(--color-blush);
 }
 html.travado, html.travado body { overflow: hidden; }
 body {
   margin: 0;
   min-height: 100svh;
-  background-color: var(--color-gesso);
+  background-color: var(--color-blush);
   color: var(--color-tinta);
   font-family: var(--font-sans);
   font-size: 1.0625rem;
@@ -32,9 +32,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 address { font-style: normal; }
-::selection { background: var(--color-vinho); color: var(--color-gesso); }
-:focus-visible { outline: 2px solid var(--color-ouro-texto); outline-offset: 4px; border-radius: 4px; }
-.tema-escuro :focus-visible { outline-color: var(--color-ouro-claro); }
+::selection { background: var(--color-vinho); color: var(--color-blush); }
+:focus-visible { outline: 2px solid var(--color-vinho); outline-offset: 4px; border-radius: 4px; }
+.tema-escuro :focus-visible { outline-color: var(--color-rose); }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -43,7 +43,7 @@ address { font-style: normal; }
 .pular-link {
   position: fixed; left: 16px; top: 12px; z-index: 200;
   padding: 10px 18px; border-radius: 999px;
-  background: var(--color-noite); color: var(--color-gesso);
+  background: var(--color-bordo); color: var(--color-blush);
   transform: translateY(-160%); transition: transform .3s var(--ease-luxo);
 }
 .pular-link:focus-visible { transform: none; }
@@ -51,12 +51,12 @@ address { font-style: normal; }
 /* ---------- Layout ---------- */
 .conteiner { width: min(100% - 2 * var(--margem), var(--largura)); margin-inline: auto; }
 .secao { position: relative; padding-block: var(--secao-y); }
-.tema-escuro { background-color: var(--color-noite); color: var(--color-gesso); }
-.fundo-areia { background-color: var(--color-areia); }
+.tema-escuro { background-color: var(--color-bordo); color: var(--color-blush); }
+.fundo-petala { background-color: var(--color-petala); }
 
 /* Grão de papel, bem leve, desenhado pelo navegador (o mesmo papel do logotipo). */
 .papel {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .16 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .24 0 0 0 0 .22 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   background-size: 240px 240px;
 }
 
@@ -64,6 +64,7 @@ address { font-style: normal; }
 .titulo {
   font-family: var(--font-display);
   font-weight: 400;
+  color: var(--color-vinho);
   font-optical-sizing: auto;
   font-size: clamp(2.7rem, 6.1vw, 5.7rem);
   line-height: 1;
@@ -73,12 +74,14 @@ address { font-style: normal; }
 .titulo-m {
   font-family: var(--font-display);
   font-weight: 400;
+  color: var(--color-vinho);
   font-size: clamp(1.7rem, 2.6vw, 2.5rem);
   line-height: 1.08;
   letter-spacing: -.012em;
 }
+.tema-escuro .titulo, .tema-escuro .titulo-m { color: var(--color-blush); }
 .lead { font-size: clamp(1.06rem, 1.25vw, 1.2rem); line-height: 1.62; color: var(--color-tinta-2); max-width: 46ch; text-wrap: pretty; }
-.tema-escuro .lead { color: rgb(244 235 221 / .76); }
+.tema-escuro .lead { color: rgb(251 244 241 / .76); }
 .num { font-variant-numeric: lining-nums tabular-nums; }
 
 /* Linhas mascaradas (títulos): cada linha sobe de trás de uma borda invisível. */
@@ -88,12 +91,12 @@ address { font-style: normal; }
 
 /* ---------- Botões ---------- */
 .botao {
-  --b-fundo: var(--color-noite);
-  --b-texto: var(--color-gesso);
-  --b-hover: var(--color-ouro-claro);
-  --b-hover-texto: var(--color-noite);
-  --b-icone: var(--color-ouro-claro);
-  --b-icone-cor: var(--color-noite);
+  --b-fundo: var(--color-vinho);
+  --b-texto: var(--color-blush-2);
+  --b-hover: var(--color-rose);
+  --b-hover-texto: var(--color-bordo);
+  --b-icone: var(--color-rose);
+  --b-icone-cor: var(--color-bordo);
   position: relative; isolation: isolate;
   display: inline-flex; align-items: center; gap: 14px;
   min-height: 62px; padding: 8px 26px 8px 8px;
@@ -124,13 +127,13 @@ address { font-style: normal; }
 @media (hover: hover) {
   .botao:hover { color: var(--b-hover-texto); }
   .botao:hover::before { transform: none; }
-  .botao:hover .botao-icone { background: var(--color-noite); color: var(--color-ouro-claro); transform: rotate(-14deg) scale(1.04); }
+  .botao:hover .botao-icone { background: var(--color-bordo); color: var(--color-rose); transform: rotate(-14deg) scale(1.04); }
   .botao:hover .botao-rolo > span:first-child { transform: translate3d(0, -120%, 0); }
   .botao:hover .botao-rolo > span + span { transform: none; }
   .botao:hover .botao-seta { transform: translate3d(3px, -3px, 0); }
 }
-.botao-claro { --b-fundo: var(--color-gesso); --b-texto: var(--color-noite); --b-hover: var(--color-ouro-claro); --b-icone: var(--color-noite); --b-icone-cor: var(--color-ouro-claro); }
-.botao-ouro { --b-fundo: var(--color-ouro-claro); --b-texto: var(--color-noite); --b-hover: var(--color-gesso); --b-icone: var(--color-noite); --b-icone-cor: var(--color-ouro-claro); }
+.botao-claro { --b-fundo: var(--color-blush); --b-texto: var(--color-bordo); --b-hover: var(--color-rose); --b-icone: var(--color-bordo); --b-icone-cor: var(--color-rose); }
+.botao-rose { --b-fundo: var(--color-rose); --b-texto: var(--color-bordo); --b-hover: var(--color-blush); --b-icone: var(--color-bordo); --b-icone-cor: var(--color-rose); }
 
 .link-linha {
   position: relative; display: inline-flex; align-items: center; gap: 10px;
@@ -147,9 +150,13 @@ address { font-style: normal; }
   .link-linha:hover svg { transform: translate3d(0, 4px, 0); }
 }
 
+/* ---------- Logotipo desenhado (o mesmo traço da abertura) ---------- */
+.logotipo { --lg-vinho: var(--color-vinho); --lg-rose: #E3A9A6; --lg-fio: var(--color-rosegold); --lg-cinza: #857871; overflow: visible; }
+.tema-escuro .logotipo { --lg-vinho: var(--color-blush); --lg-rose: var(--color-rose); --lg-fio: #D9A58E; --lg-cinza: rgb(251 244 241 / .62); }
+
 /* ---------- Sombra de palmeira (a mesma luz da arte do topo, viva) ---------- */
 .palmeira { position: absolute; pointer-events: none; overflow: visible; mix-blend-mode: multiply; filter: blur(var(--palmeira-blur, 16px)); opacity: var(--palmeira-forca, .32); }
-.palmeira-folha { fill: #7A5A33; transform-box: fill-box; transform-origin: 0% 100%; animation: balanco 9s ease-in-out infinite alternate; }
+.palmeira-folha { fill: #8A5B50; transform-box: fill-box; transform-origin: 0% 100%; animation: balanco 9s ease-in-out infinite alternate; }
 .palmeira-folha:nth-child(2) { animation-duration: 11.5s; animation-delay: -4s; }
 .palmeira-folha:nth-child(3) { animation-duration: 13s; animation-delay: -7s; }
 @keyframes balanco { from { transform: rotate(-2.2deg) skewX(-1deg); } to { transform: rotate(2.6deg) skewX(1.4deg); } }

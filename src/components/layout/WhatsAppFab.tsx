@@ -6,7 +6,7 @@ import BrandIcon from '../ui/BrandIcon'
 /*
   Balão do WhatsApp. Fica sempre na tela (nunca some).
   Física: a velocidade da rolagem puxa o balão por uma mola amortecida; ao parar, ele volta
-  com um leve quique, inclinando e esticando conforme a velocidade. Sobre seções escuras, fica dourado.
+  com um leve quique, inclinando e esticando conforme a velocidade. Sobre seções escuras, fica rosé.
 */
 export default function WhatsAppFab({ liberado }: { liberado: boolean }) {
   const ref = useRef<HTMLAnchorElement>(null)
@@ -62,7 +62,7 @@ export default function WhatsAppFab({ liberado }: { liberado: boolean }) {
     window.addEventListener('resize', verificaFundo)
     verificaFundo()
 
-    /* A dica aparece uma vez, no computador, quando a pessoa já passou do topo (ali ela cobriria o letreiro). */
+    /* A dica aparece uma vez, no computador, quando a pessoa já passou do topo (ali ela cobriria o logotipo). */
     const comMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     let t1 = 0, t2 = 0, mostrou = false
     const talvezDica = () => {

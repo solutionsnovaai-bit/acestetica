@@ -8,7 +8,7 @@ import BrandIcon from './BrandIcon'
 type Props = {
   href: string
   children: string
-  variante?: 'noite' | 'claro' | 'ouro'
+  variante?: 'vinho' | 'claro' | 'rose'
   className?: string
   externo?: boolean
   icone?: ReactNode
@@ -19,7 +19,7 @@ type Props = {
  * Botão principal: ícone num círculo, texto que "rola" no hover e um leve efeito magnético
  * com o mouse (só em telas com mouse).
  */
-export function Botao({ href, children, variante = 'noite', className = '', externo = true, icone, rotuloAcessivel }: Props) {
+export function Botao({ href, children, variante = 'vinho', className = '', externo = true, icone, rotuloAcessivel }: Props) {
   const { reduced } = useMotionPreferences()
   const ref = useRef<HTMLAnchorElement>(null)
   const mx = useMotionValue(0), my = useMotionValue(0)
@@ -32,7 +32,7 @@ export function Botao({ href, children, variante = 'noite', className = '', exte
     my.set((e.clientY - (r.top + r.height / 2)) * .3)
   }
   const soltar = () => { mx.set(0); my.set(0) }
-  const cls = `botao ${variante === 'claro' ? 'botao-claro' : variante === 'ouro' ? 'botao-ouro' : ''} ${className}`
+  const cls = `botao ${variante === 'claro' ? 'botao-claro' : variante === 'rose' ? 'botao-rose' : ''} ${className}`
   return <m.a ref={ref} href={href} className={cls} style={{ x, y }} onPointerMove={mover} onPointerLeave={soltar}
     {...(externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})} aria-label={rotuloAcessivel}>
     <span className="botao-icone">{icone ?? <BrandIcon brand="whatsapp" />}</span>

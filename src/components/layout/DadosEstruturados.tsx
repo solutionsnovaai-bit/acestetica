@@ -3,7 +3,7 @@ import { temWhatsApp } from '../../lib/whatsapp'
 
 const DIAS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-/** Dados para o Google entender o negócio (clínica de estética, com endereço e horário). */
+/** Dados para o Google entender o negócio (salão de beleza, com endereço e horário). */
 export default function DadosEstruturados() {
   const e = SITE.endereco
   const dados: Record<string, unknown> = {

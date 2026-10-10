@@ -5,64 +5,60 @@
 import { SITE } from '../config/site'
 
 export const NAV = [
-  { href: '#tratamentos', rotulo: 'Tratamentos' },
+  { href: '#servicos', rotulo: 'Serviços' },
+  { href: '#cabelos', rotulo: 'Cabelos' },
   { href: '#como-funciona', rotulo: 'Como funciona' },
-  { href: '#amanda', rotulo: 'A Amanda' },
   { href: '#avaliacoes', rotulo: 'Avaliações' },
   { href: '#onde-fica', rotulo: 'Onde fica' },
 ] as const
 
 export const HERO = {
-  titulo: ['Sua pele,', 'em boas mãos.'],
-  texto: 'Estética facial e corporal em Itaquera. A Amanda avalia a sua pele de perto e monta um protocolo só para você.',
-  cta: 'Agendar um horário',
-  link: 'Ver os tratamentos',
+  titulo: ['Sua beleza,', 'nossa paixão.'],
+  texto: `Salão de beleza feminina no ${SITE.endereco.bairro}. Cabelo, unhas, cílios, sobrancelhas e estética num só lugar.`,
+  cta: 'Agendar horário',
+  link: 'Ver os serviços',
 } as const
 
-export const FAIXA = ['Limpeza de pele', 'Peeling químico', 'Manchas e melasma', 'Protocolos faciais', 'Cuidados corporais', 'Avaliação individual'] as const
+export const FAIXA = ['Cabelo', 'Loiros', 'Unhas', 'Cílios', 'Sobrancelhas', 'Micropigmentação', 'Estética facial e corporal', 'Massagem', 'Depilação'] as const
 
 export const MANIFESTO = {
-  /** As palavras acendem uma a uma conforme a rolagem. Trechos entre *asteriscos* ficam em itálico dourado. */
+  /** As palavras acendem uma a uma conforme a rolagem. Trechos entre *asteriscos* ficam em itálico vinho. */
   texto:
-    'Aqui ninguém escolhe tratamento em tabela. Primeiro a Amanda olha a sua pele de perto, pergunta da sua rotina e ouve o que te incomoda. *Só depois nasce o protocolo:* o seu, para o rosto, para o corpo ou para os dois.',
+    'Beleza, cuidado e autoestima em um só lugar. Aqui você faz o cabelo, a unha e a sobrancelha, e ainda sai com a pele cuidada, *sem correr de um endereço para o outro.* É o seu dia de beleza completo, no Itaim Paulista.',
 } as const
 
-export const TRATAMENTOS = {
-  titulo: ['Para o rosto', 'e para o corpo.'],
-  texto: 'Toque em um cuidado para saber como ele funciona. A indicação certa para você sai da avaliação.',
+export const SERVICOS = {
+  titulo: ['Tudo o que você', 'precisa, aqui tem.'],
+  texto: 'Toque em um serviço para saber mais e já perguntar no WhatsApp.',
   perguntar: 'Perguntar sobre',
 } as const
 
-export const PASSOS = {
-  titulo: ['Do primeiro oi', 'ao seu protocolo.'],
-  itens: [
-    { titulo: 'Você chama no WhatsApp', texto: 'Conta o que procura e combina o melhor dia e horário.' },
-    { titulo: 'A Amanda avalia a sua pele', texto: 'Uma conversa e um olhar de perto, antes de qualquer procedimento.' },
-    { titulo: 'O protocolo é feito para você', texto: 'Para o rosto, para o corpo ou para os dois, no seu ritmo.' },
-  ],
-  cta: 'Começar pelo WhatsApp',
+export const GALERIA = {
+  titulo: ['Cabelos que', 'saíram daqui.'],
+  texto: 'Cortes, cores e penteados feitos no salão.',
+  link: 'Ver mais no Instagram',
 } as const
 
-export const AMANDA_TEXTO = {
-  titulo: ['Quem cuida', 'de você.'],
-  paragrafos: [
-    `${SITE.profissional} é esteticista e atende em ${SITE.endereco.bairro}, na Zona Leste de São Paulo. Trabalha com estética facial e corporal e não indica nenhum procedimento sem antes avaliar a pele de quem chega.`,
-    'Quem já foi atendida fala de um cuidado atento a cada detalhe e de uma conversa franca sobre o que dá para esperar de cada tratamento.',
+export const PASSOS = {
+  titulo: ['Do primeiro oi', 'ao seu horário.'],
+  itens: [
+    { titulo: 'Você chama no WhatsApp', texto: 'Conta o que quer fazer e escolhe o melhor dia.' },
+    { titulo: 'A gente confirma o horário', texto: 'Com o tempo certo para cada serviço que você escolheu.' },
+    { titulo: 'Você vem e aproveita', texto: 'Dá para juntar cabelo, unha e estética na mesma visita.' },
   ],
-  pontos: ['Avaliação individual', 'Protocolo personalizado', 'Rosto e corpo'],
-  fotoAlt: `Retrato da ${SITE.profissional}, de blusa branca, com o queixo apoiado na mão.`,
+  cta: 'Agendar pelo WhatsApp',
 } as const
 
 export const AVALIACOES = {
-  titulo: ['Quem veio,', 'recomenda.'],
+  titulo: ['Quem vem,', 'recomenda.'],
   legenda: (n: number) => `Nota no Google, em ${n} avaliações.`,
-  elogiosTitulo: 'O que as clientes mais elogiam',
-  elogios: ['Atendimento atencioso', 'Espaço limpo e organizado', 'Produtos de qualidade', 'Resultado na pele'],
+  elogiosTitulo: 'O que as clientes elogiam',
+  elogios: ['Profissionais de primeira', 'Atendimento cuidadoso', 'Equipe dedicada', 'O corte do jeito que você pediu'],
   cta: 'Ler as avaliações no Google',
 } as const
 
 export const ONDE = {
-  titulo: ['Fica em', 'Itaquera.'],
+  titulo: ['Fica no', `${SITE.endereco.bairro}.`],
   texto: 'Atendimento com hora marcada. Chame no WhatsApp para combinar o seu horário.',
   horarioTitulo: 'Horário',
   fechado: 'Fechado',
@@ -72,11 +68,11 @@ export const ONDE = {
 } as const
 
 export const CONVITE = {
-  titulo: ['Vamos cuidar', 'da sua pele?'],
-  texto: 'A avaliação é o primeiro passo. Mande uma mensagem e a Amanda te responde com os horários.',
+  titulo: ['Vamos marcar', 'o seu horário?'],
+  texto: 'Mande uma mensagem e a gente responde com os dias e horários disponíveis.',
   cta: 'Agendar pelo WhatsApp',
 } as const
 
 export const RODAPE = {
-  faixa: SITE.assinatura,
+  faixa: 'Sua beleza, nossa paixão',
 } as const

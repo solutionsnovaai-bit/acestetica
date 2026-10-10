@@ -50,7 +50,7 @@ export default function Avaliacoes() {
           {AVALIACOES.elogios.map((e, i) => <Revelar as="li" key={e} delay={i * .07} y={16}>{e}</Revelar>)}
         </ul>
         <Revelar className="avaliacoes-cta">
-          <Botao href={linkAvaliacoes} variante="ouro" icone={<Star strokeWidth={0} fill="currentColor" />} rotuloAcessivel={`${AVALIACOES.cta} (abre em nova aba)`}>{AVALIACOES.cta}</Botao>
+          <Botao href={linkAvaliacoes} variante="rose" icone={<Star strokeWidth={0} fill="currentColor" />} rotuloAcessivel={`${AVALIACOES.cta} (abre em nova aba)`}>{AVALIACOES.cta}</Botao>
         </Revelar>
       </div>
     </div>

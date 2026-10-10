@@ -38,7 +38,7 @@
       /* Decide a abertura antes do primeiro quadro: completa na 1ª visita, rápida ao voltar, nenhuma com "reduzir movimento". */
       (function () {
         var modo = 'completa'
-        try { if (sessionStorage.getItem('ac-abertura')) modo = 'rapida' } catch (e) {}
+        try { if (sessionStorage.getItem('sis-abertura')) modo = 'rapida' } catch (e) {}
         try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) modo = 'nenhuma' } catch (e) {}
         document.documentElement.setAttribute('data-abertura', modo)
       })()
@@ -52,7 +52,7 @@
   </head>
   <body>
     <div id="root"><div class="abertura-estatica" aria-hidden="true"></div></div>
-    <noscript><style>.abertura-estatica{display:none}</style><p style="font:18px/1.6 system-ui,sans-serif;padding:40px;color:#18212F">__SEM_JS__</p></noscript>
+    <noscript><style>.abertura-estatica{display:none}</style><p style="font:18px/1.6 system-ui,sans-serif;padding:40px;color:#4A121C">__SEM_JS__</p></noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,28 +1,34 @@
 /* ---------- Abertura ---------- */
-.abertura { position: fixed; inset: 0; z-index: 100; pointer-events: none; contain: strict; }
+.abertura { position: fixed; inset: 0; z-index: 100; pointer-events: none; contain: strict; overflow: hidden; }
 .abertura.is-bloqueando { pointer-events: auto; }
-.ab-noite { position: absolute; inset: 0; background: var(--color-noite); }
-/* a luz abre em círculo a partir do monograma */
-.ab-noite.is-abrindo {
-  --raio: -12vmax;
-  -webkit-mask: radial-gradient(circle at var(--cx, 50%) var(--cy, 45%), transparent var(--raio), #000 calc(var(--raio) + 20vmax));
-  mask: radial-gradient(circle at var(--cx, 50%) var(--cy, 45%), transparent var(--raio), #000 calc(var(--raio) + 20vmax));
+/* o papel claro (na frente) e o véu rosé (logo atrás): os dois sobem como cortinas, um depois do outro */
+.ab-papel, .ab-veu {
+  position: absolute; inset: 0 0 -4% 0;
+  will-change: transform;
+  transition: border-radius .9s var(--ease-luxo);
 }
+.ab-papel { background-color: var(--color-blush); }
+.ab-veu { background-color: var(--color-rose); }
+.abertura.is-saindo .ab-papel, .abertura.is-saindo .ab-veu { border-radius: 0 0 50% 50% / 0 0 11vh 11vh; }
 
-/* cada parte do logotipo (monograma, letreiro, assinatura) voa por conta própria até o lugar dela na parede */
-.ab-grupo { position: fixed; left: 0; top: 0; transform-origin: 0 0; will-change: transform, opacity; }
-.ab-grupo svg { width: 100%; height: 100%; overflow: visible; }
-.ab-mono path { fill: none; stroke: var(--color-ouro-claro); stroke-linecap: round; stroke-linejoin: round; }
-.ab-nome path { fill: var(--color-ouro-claro); stroke: var(--color-ouro-claro); stroke-width: var(--traco, 2); stroke-linejoin: round; }
-.ab-sub path { fill: var(--color-gesso); }
+/* o palco tem o tamanho da tela; cada parte do logotipo é posicionada por uma matriz com origem no canto */
+.ab-palco { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; opacity: 0; will-change: opacity; }
+.ab-parte { transform-box: view-box; transform-origin: 0 0; will-change: transform; }
+.ab-vinho { fill: var(--color-vinho); }
+.ab-rose { fill: #E3A9A6; }
+.ab-cinza { fill: #857871; }
+.ab-fio, .ab-fio path { fill: none; stroke: var(--color-rosegold); stroke-linecap: round; }
+.ab-fio-cheio { fill: var(--color-rosegold); }
+.ab-trilho { opacity: .28; }
+.ab-mono-traco { fill: none; stroke: var(--color-vinho); stroke-width: 2.4; stroke-linejoin: round; }
+/* cada linha ao lado de "BEAUTY" se abre a partir do centro */
+.ab-linha { transform-box: fill-box; transform-origin: 0% 50%; }
+.ab-linha.is-esquerda { transform-origin: 100% 50%; }
 
 .ab-contador {
-  position: absolute; left: 50%; bottom: max(7vh, calc(env(safe-area-inset-bottom) + 28px));
+  position: absolute; left: 50%; bottom: max(calc(4% + 7vh), calc(4% + env(safe-area-inset-bottom) + 28px));
   transform: translateX(-50%);
-  display: grid; justify-items: center; gap: 12px;
-  color: var(--color-ouro-claro); opacity: 0;
+  color: var(--color-vinho); opacity: 0;
 }
 .ab-numero { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 3.2vh, 2rem); line-height: 1; letter-spacing: .02em; }
-.ab-trilho { display: block; width: min(180px, 40vw); height: 1px; background: rgb(227 190 119 / .22); overflow: hidden; }
-.ab-fio { display: block; width: 100%; height: 100%; background: var(--color-ouro-claro); transform: scaleX(0); transform-origin: 0 50%; }
 html[data-abertura="rapida"] .ab-contador { display: none; }

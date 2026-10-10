@@ -5,13 +5,13 @@ import { ENDERECO_LINHA, MENSAGENS, SITE } from '../../config/site'
 import { waLink } from '../../lib/whatsapp'
 import { useMotionPreferences } from '../../hooks/useMotionPreferences'
 import BrandIcon from '../ui/BrandIcon'
-import Monograma from '../ui/Monograma'
+import { Monograma } from '../ui/Marca'
 import { Botao } from '../ui/Botao'
 import { CORTINA, EASE } from '../ui/Revelar'
 
 function Marca() {
   return <>
-    <Monograma className="topo-mono" espessura={20} />
+    <Monograma className="topo-mono" />
     <span className="topo-nome">{SITE.nome}</span>
   </>
 }
@@ -106,7 +106,7 @@ export default function Topo({ visivel }: { visivel: boolean }) {
           </m.a>)}
         </nav>
         <m.div className="menu-rodape" initial={reduced ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: .8, delay: .5, ease: EASE }}>
-          <Botao href={waLink(MENSAGENS.padrao)} variante="ouro" rotuloAcessivel="Agendar pelo WhatsApp (abre em nova aba)">Agendar pelo WhatsApp</Botao>
+          <Botao href={waLink(MENSAGENS.padrao)} variante="rose" rotuloAcessivel="Agendar pelo WhatsApp (abre em nova aba)">Agendar pelo WhatsApp</Botao>
           <p className="menu-info">{ENDERECO_LINHA}<br />WhatsApp {SITE.whatsappExibicao}</p>
         </m.div>
       </m.div>}

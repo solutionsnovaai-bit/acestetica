@@ -11,7 +11,7 @@ import { ENDERECO_COMPLETO, SEO, SITE } from './src/config/site'
 function siteOrigin(mode: string) {
   const env = loadEnv(mode, '.', 'VITE_')
   const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  const raw = env.VITE_SITE_URL || (vercel ? `https://${vercel}` : 'https://acestetica.vercel.app')
+  const raw = env.VITE_SITE_URL || (vercel ? `https://${vercel}` : 'https://sistersbelabeauty.vercel.app')
   const url = new URL(raw)
   if (!['https:', 'http:'].includes(url.protocol)) throw new Error('VITE_SITE_URL deve usar HTTP ou HTTPS.')
   return url.origin
@@ -31,7 +31,7 @@ function dadosDoSite(origin: string): Plugin {
     __IMAGEM_ALT__: html(SEO.imagemAlt),
     __COR_TEMA__: SEO.corTema,
     __COR_FUNDO__: SEO.corFundo,
-    __SEM_JS__: html(`${SITE.nome}: estética facial e corporal. ${ENDERECO_COMPLETO}. WhatsApp ${SITE.whatsappExibicao}.`),
+    __SEM_JS__: html(`${SITE.nome}: ${SITE.assinatura.toLowerCase()}. ${ENDERECO_COMPLETO}. WhatsApp ${SITE.whatsappExibicao}.`),
     __ROBOS__: SITE.indexar ? 'index, follow' : 'noindex, nofollow',
   }
   const manifesto = JSON.stringify({
